@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function closeWebview() {
+                window.webkit.messageHandlers.closeWebView.postMessage("close webview");
+            }
+        </script>
+    </head>
+    <style>
+        .content {
+            max-width: 500px;
+            max-height: 500px;
+            margin: auto;
+            text-align: center;
+        }
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 50px;
+        }
+    </style>
+    <body>
+        <div class="content">
+            <br />
+            <br />
+            <br />
+            <br />
+            <a href="https://bit.ly/2O8tZnw"><button class="button">Open Link</button></a>
+            <br />
+            <br />
+            <br />
+            <a href="https://www.google.com"><button class="button">Open Google</button></a>
+            <br />
+            <br />
+            <br />
+            <br />
+            <button class="button" onclick="closeWebview()">Close Webview</button>
+        </div>
+    </body>
+</html>
