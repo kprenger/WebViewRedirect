@@ -30,19 +30,13 @@ class ViewController: UIViewController {
         webView.isUserInteractionEnabled = true
         webView.navigationDelegate = self
         
-        guard let resourceUrl = Bundle.main.resourceURL else { return }
-        let bundleUrl = resourceUrl.absoluteURL
-        let html = bundleUrl.appendingPathComponent("index.html")
-        
-        webView.loadFileURL(html, allowingReadAccessTo: bundleUrl)
-        
         /*
-         Using a combo of ngrok and python's SimpleHttpServer, you could host the page locally and access it
-         as if it were actually on the internet. And then use something like the below.
-         
-         guard let url = URL(string: "https://89c4fc5d.ngrok.io") else { return }
-         webView.load(URLRequest(url: url))
+         Using a combo of ngrok and python's SimpleHttpServer, you can host the `index.html` page locally
+         and access it as if it were actually on the internet. More info in the README.
          */
+        
+        guard let url = URL(string: "https://0295a737.ngrok.io") else { return }
+        webView.load(URLRequest(url: url))
         
         webViewController.view.addSubview(webView)
     }
